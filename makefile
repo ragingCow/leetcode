@@ -1,4 +1,4 @@
-haha: Test.class
-	javac Test.java
+compile: 
+	javac Solution.java 
 run:
-	java Test
+	java Solution 
