@@ -1,4 +1,5 @@
 compile: 
 	javac Solution.java 
+	javac Test.java
 run:
-	java Solution 
+	java Test
