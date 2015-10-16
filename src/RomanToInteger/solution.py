@@ -25,7 +25,23 @@ class Solution(object):
             roman = s[index]
             if roman == 'I' or roman == 'C' or roman == 'X':
                 if index + 1 == length:
-                    ret += value(roman)
+                    ret += self.value(roman)
+                    index += 1;
+                    continue;
                 else:
-                    tValue = s[index + 1]
-                    if(value(tValue) > value(roman))
+                    nextValue = self.value(s[index + 1])
+                    curValue = self.value(s[index])
+                    if nextValue > curValue:
+                        ret += nextValue - curValue
+                        index += 2
+                    else:
+                        ret += curValue
+                        index += 1
+            else:
+                ret += self.value(roman)
+                index += 1
+        return ret
+
+if __name__ == "__main__":
+    s = Solution()
+    print s.romanToInt("MCMLXXX")
